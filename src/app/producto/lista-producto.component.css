@@ -1,0 +1,25 @@
+table{
+    border-spacing: 1;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+table thead tr{
+    height: 60px;
+    background: #36304a;
+}
+
+table thead tr th{
+    color: #fff;
+}
+
+tbody tr {
+    font-size: 15px;
+    color: gray;
+    line-height: 1.2;
+    font-weight: unset;
+}

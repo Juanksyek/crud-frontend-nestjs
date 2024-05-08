@@ -1,0 +1,19 @@
+.back{
+    background-color: #fbfcfc;
+    padding: 4%;
+    border-radius: 10px;
+}
+
+ul li b{
+    font-size: 15px;
+    color: gray;
+    line-height: 1.2;
+    font-weight: unset;
+}
+
+ul li{
+    font-size: 15px;
+    color: gray;
+    line-height: 1.2;
+    font-weight: unset;
+}

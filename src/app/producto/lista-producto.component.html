@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="container" *ngIf="!listaVacia">
+        <table class="table table-light table-striped text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Ver</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Borrar</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr *ngFor="let producto of productos">
+                    <td>{{ producto.id !== undefined ? producto.id : 'N/A' }}</td>
+                    <td>{{ producto.nombre }}</td>
+                    <td>{{ producto.precio }}$</td>
+                    <td *ngIf="producto.id !== undefined">
+                        <button class="btn btn-outline-primary" [routerLink]="'/detalle/' + producto.id"><i class="far fa-eye"></i> Ver</button>
+                    </td>
+                    <td *ngIf="producto.id !== undefined">
+                        <button class="btn btn-outline-warning" [routerLink]="'/editar/' + producto.id"><i class="far fa-edit"></i> Editar</button>
+                    </td>
+                    <td *ngIf="producto.id !== undefined">
+                        <button class="btn btn-outline-danger" (click)="borrar(producto.id)"><i class="far fa-trash-alt"></i> Eliminar</button>
+                    </td>
+                    <td *ngIf="producto.id === undefined">N/A</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="container" *ngIf="listaVacia">
+        <div class="p-3 mb-2 bg-dark text-white text-center"><h2>{{ listaVacia }}</h2></div>
+    </div>
+</div>
