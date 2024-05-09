@@ -1,4 +1,25 @@
 # Frontend
+# CRUD con Nestjs, Angular y JWT
+
+## Instrucciones de uso y notas
+
+## Desarrollo
+- Para el desarrollo de frontend untilicé Angular como framework y TypeScript como manejador de lenguaje.
+- Tambien utilicé algunas dependencias de Bootstrap para manejar estilos.
+
+## Ejecución.
+__Importante__ seguir las instrucciones:
+1. Para ejecutar el frontend es mucho mas simple que el backend, por lo que primero debemos abrir una terminal dentro de la carpeta `crud-frontend-nest`.
+2. Seguido, hay que instalar las dependencias de npm utilizando `npm i`.
+3. Tambien hay que instalar las dependencias de Angular utilizando `npm i -g @angular/cli`.
+4. Por último ya podemos iniciar el servidor de angular utilizando `ng serve -o`.
+
+Nota: en caso de que surja un problema (que espero que no) favor de hacermelo saber, a mi parecer ya está listo para poder usar.
+Gracias y saludos!!!
+
+
+###  ---
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
 
