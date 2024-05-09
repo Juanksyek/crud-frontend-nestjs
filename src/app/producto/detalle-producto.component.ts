@@ -36,6 +36,6 @@ export class DetalleProductoComponent {
   }
 
   volver(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/lista']);
   }
 }

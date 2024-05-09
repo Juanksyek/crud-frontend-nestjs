@@ -1,0 +1,23 @@
+<app-menu></app-menu>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4" *ngIf="!nombreUsuario">CRUD NestJS, Angular y JWT</h1>
+    <h1 class="display-4" *ngIf="nombreUsuario">Hola, {{ nombreUsuario }}</h1>
+    <p class="lead">
+      Hola, {{ nombreUsuario }} en este sistema puedes administrar una serie de
+      articulos, realizando las operaciones de un CRUD basico.
+    </p>
+    <p *ngIf="!nombreUsuario">
+      Primeramente recomindo que crees un usuario llenando los datos del
+      formulario, posterior a esto podras loggearte y hacer uso de la app,
+      puedes registrar productos con un ID automatico, editar, eliminar y
+      consultar en una lista.
+    </p>
+    <hr class="my-4" />
+    <p>
+      {{ nombreUsuario }} espero disfrutes este sistema y sea de tu agrado.
+      Saludos!!!
+    </p>
+  </div>
+</div>

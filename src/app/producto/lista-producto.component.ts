@@ -1,24 +1,31 @@
-import { Component } from '@angular/core';
-import { Producto } from '../models/producto';
-import { ProductoService } from '../services/producto.service';
+import { TokenService } from './../services/token.service';
+import { ProductoService } from './../services/producto.service';
+import { Producto } from './../models/producto';
+import { Component, OnInit } from '@angular/core';
+
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-lista-producto',
   templateUrl: './lista-producto.component.html',
-  styleUrl: './lista-producto.component.css'
+  styleUrls: ['./lista-producto.component.css']
 })
-export class ListaProductoComponent {
+export class ListaProductoComponent implements OnInit {
+
   productos: Producto[] = [];
 
   listaVacia = undefined;
 
+  isAdmin: boolean = false;
+
   constructor(
-    private productoService: ProductoService
+    private productoService: ProductoService,
+    private tokenService: TokenService
     ) { }
 
   ngOnInit(): void {
     this.cargarProductos();
+    this.isAdmin = this.tokenService.isAdmin();
   }
 
   cargarProductos(): void {
@@ -39,8 +46,8 @@ export class ListaProductoComponent {
       text: 'No hay vuelta atrás',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'SI',
-      cancelButtonText: 'NO ELIMINAR'
+      confirmButtonText: 'Sip',
+      cancelButtonText: 'Nops'
     }).then((result) => {
       if (result.value) {
         this.productoService.delete(id).subscribe(res => this.cargarProductos());
@@ -58,4 +65,6 @@ export class ListaProductoComponent {
       }
     });
   }
+
+
 }
